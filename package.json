@@ -1,0 +1,31 @@
+{
+  "name": "vanillaweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "20.11.0"
+  },
+  "scripts": {
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run -b chrome"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.7.2"
+  },
+  "ntl": {
+    "descriptions": {
+      "cypress:open": "Open Cypress for visual run",
+      "cypress:run": "Run Cypress for headless mode"
+    }
+  }
+}

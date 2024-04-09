@@ -1,0 +1,16 @@
+{
+  "nullFields": {
+    "title": "",
+    "url": "",
+    "validateTitle": "Please type a title for the image.",
+    "validateUrl": "Please type a valid URL",
+    "css": "border-color",
+    "style": "rgb(220, 53, 69)"
+  },
+  "fillFields": {
+    "title": "Humanoide E.T",
+    "url": "https://static.vecteezy.com/ti/fotos-gratis/t1/22911203-estrangeiro-humanoide-retrato-em-sombrio-fundo-invasao-do-extraterrestre-estrangeiro-rapto-criada-com-generativo-ai-gratis-foto.jpg",
+    "css": "border-color",
+    "style": "rgb(222, 226, 230)"
+  }
+}
