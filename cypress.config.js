@@ -1,9 +1,10 @@
 import { defineConfig } from "cypress";
+const { allureCypress } = require("allure-cypress/reporter");
 
 export default defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      allureCypress(on);
     },
     chromeWebSecurity: false,
     baseUrl: 'https://erickwendel.github.io/vanilla-js-web-app-example/',
