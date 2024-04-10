@@ -5,15 +5,28 @@ class Register {
   }
 
   fillTitle(title) {
-    title ? cy.get('#title').type(`${title}{enter}`) : cy.log('Title Null')
+    title 
+        ? cy.get('#title').type(`${title}{enter}`) 
+        : cy.log('Title Null')
   }
 
   fillUrl(url) {
-    url ? cy.get('#imageUrl').type(url, { delay: 0 }) : cy.log('Url Null')
+    url
+      ? cy.get('#imageUrl').type(url, { delay: 0 })
+      : cy.log('Url Null')
+  }
+
+  hitEnter() {
+    cy.focused().wait(500).type('{enter}')
   }
 
   submitForm() {
     cy.get('#btnSubmit').click()
+  }
+
+  validateEmpyFields() {
+    cy.get('#title').should('have.value', '')
+    cy.get('#imageUrl').should('have.value', '')
   }
 
   validateError(text) {
@@ -37,15 +50,36 @@ class Register {
       })
   }
 
-  fieldsContainCss(fields) {
-    cy.get('.form-control').each(($el, index, $list) => {
-      cy.wrap($el).should('have.css', fields.element, fields.color)
+  fieldsContainCss(payload) {
+    if (Array.isArray(payload.fields)) {
+      cy.get('.form-control').each(($el, index, $list) => {
+        cy.wrap($el).should('have.css', payload.element, payload.color)
+      })
+    } else if (payload.fields === 'url') {
+      cy.get('#imageUrl').should('have.css', payload.element, payload.color)
+    } else {
+      cy.get('#title').should('have.css', payload.element, payload.color)
+    }
+  }
+
+  searchNewCard(payload) {
+    cy.get('.card-img-top.card-img')
+      .last()
+      .should('have.attr', 'src', payload.url)
+      .parent()
+      .find('h4')
+      .should('contain.text', payload.title)
+  }
+
+  validateLocalStorage(payload) {
+    cy.reload()
+    cy.getAllLocalStorage().then((ls) => {
+      const currentLs = ls[window.location.origin]
+      const elements = JSON.parse(Object.values(currentLs))
+
+      expect(elements[0].title).to.eql(payload.title)
+      expect(elements[0].imageUrl).to.eql(payload.url)
     })
-
-    // cy.get('.form-control').should('')
-    // cy.get('#title').should('have.css', fields.css, fields.style)
-
-    // cy.get('#imageUrl').should('have.css', fields.css, fields.style)
   }
 }
 

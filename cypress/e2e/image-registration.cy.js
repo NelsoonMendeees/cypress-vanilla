@@ -1,15 +1,9 @@
 import register from '../support/pages/register'
+import data from '../fixtures/data.json'
 
 describe('Image Registration', () => {
   context('Submitting an image with invalid inputs', () => {
-    const nullFields = {
-      title: '',
-      url: '',
-      validateTitle: 'Please type a title for the image.',
-      validateUrl: 'Please type a valid URL',
-      element: 'border-color',
-      color: 'rgb(220, 53, 69)'
-    }
+    const { nullFields } = data
 
     it('Given I am on the image registration page', () => {
       register.go()
@@ -43,30 +37,33 @@ describe('Image Registration', () => {
     })
   })
 
-  context.skip('Submitting an image with valid inputs using enter key', () => {
-    const fillFields = {
-      title: 'Humanoide E.T',
-      url: 'https://static.vecteezy.com/ti/fotos-gratis/t1/22911203-estrangeiro-humanoide-retrato-em-sombrio-fundo-invasao-do-extraterrestre-estrangeiro-rapto-criada-com-generativo-ai-gratis-foto.jpg',
-      element: 'border-color',
-      color: 'rgb(25, 135, 84)'
-    }
+  context('Submitting an image with valid inputs using enter key', () => {
+    const { validFields } = data
 
     it('Given I am on the image registration page', () => {
       register.go()
     })
-    it(`When I enter "${fillFields.title}" in the title field`, () => {
-      register.fillTitle(fillFields.title)
+    it(`When I enter "${validFields.title}" in the title field`, () => {
+      register.fillTitle(validFields.title)
     })
     it('Then I should see a check icon in the fields', () => {
-      register.validarCamposComCorEspecifica(fillFields)
+      register.fieldsContainCss(validFields)
     })
-    it(`When I enter "${fillFields.url}" in the URL field`, () => {
-      register.fillUrl(fillFields.url)
+    it(`When I enter "${validFields.url}" in the URL field`, () => {
+      register.fillUrl(validFields.url)
     })
-
-    it('And the list of registered images should be updated with the new item')
-    it('And the new item should be stored in the localStorage')
-    it('Then The inputs should be cleared')
+    it('Then I can hit enter to submit the form', () => {
+      register.hitEnter()
+    })
+    it('And the list of registered images should be updated with the new item', () => {
+      register.searchNewCard(validFields)
+    })
+    it('And the new item should be stored in the localStorage', () => {
+      register.validateLocalStorage(validFields)
+    })
+    it('Then The inputs should be cleared', () => {
+      register.validateEmpyFields()
+    })
 
     after(() => {
       cy.clearLocalStorage()
