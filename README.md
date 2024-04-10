@@ -6,3 +6,6 @@ Repositório do projeto de testes automatizados desafio Erick Wendel
 ## 💻 Tecnologias
 - Cypress
 - Javascript
+
+## 🌐 GitHub Page
+- [Acesse a GitHub Page do projeto aqui](https://nelsoonmendeees.github.io/cypress-vanilla/)
