@@ -1,10 +1,10 @@
-import { defineConfig } from "cypress";
-const { allureCypress } = require("allure-cypress/reporter");
+const { defineConfig } = require('cypress')
+const { allureCypress } = require('allure-cypress/reporter')
 
-export default defineConfig({
+module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      allureCypress(on);
+      allureCypress(on)
     },
     chromeWebSecurity: false,
     baseUrl: 'https://erickwendel.github.io/vanilla-js-web-app-example/',
@@ -15,5 +15,5 @@ export default defineConfig({
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
     experimentalRunAllSpecs: true,
     testIsolation: false
-  },
-});
+  }
+})
