@@ -8,4 +8,4 @@ Repositório do projeto de testes automatizados desafio Erick Wendel
 - Javascript
 
 ## 🌐 GitHub Page
-- [Acesse a GitHub Page do projeto aqui](https://nelsoonmendeees.github.io/cypress-vanilla/)
+- [Allure Report](https://nelsoonmendeees.github.io/cypress-vanilla/)
