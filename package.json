@@ -12,6 +12,7 @@
     "cypress:run": "npx cypress run -b chrome"
   },
   "prettier": {
+    "printWidth": 90,
     "semi": false,
     "singleQuote": true,
     "trailingComma": "none"

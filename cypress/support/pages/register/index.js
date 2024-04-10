@@ -72,7 +72,6 @@ class Register {
   }
 
   validateLocalStorage(payload) {
-    cy.reload()
     cy.getAllLocalStorage().then((ls) => {
       const currentLs = ls[window.location.origin]
       const elements = JSON.parse(Object.values(currentLs))

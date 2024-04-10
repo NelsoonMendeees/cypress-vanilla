@@ -8,9 +8,21 @@
     "element": "border-color",
     "color": "rgb(220, 53, 69)"
   },
-  "validFields": {
+  "registerEnterKey": {
     "title": "Humanoide E.T",
     "url": "https://static.vecteezy.com/ti/fotos-gratis/t1/22911203-estrangeiro-humanoide-retrato-em-sombrio-fundo-invasao-do-extraterrestre-estrangeiro-rapto-criada-com-generativo-ai-gratis-foto.jpg",
+    "element": "border-color",
+    "color": "rgb(25, 135, 84)"
+  },
+  "registerSubmit": {
+    "title": "Alien Glass Statue",
+    "url": "https://storage.googleapis.com/pai-images/8eb10978927d49fbbb3e9650855e55a5.jpeg",
+    "element": "border-color",
+    "color": "rgb(25, 135, 84)"
+  },
+  "submitRefresh": {
+    "title": "E.T",
+    "url": "https://s2.glbimg.com/HGiRR6swgwbgjD7UbCs5MwWccL4=/e.glbimg.com/og/ed/f/original/2015/06/16/et-spielberg.jpg",
     "element": "border-color",
     "color": "rgb(25, 135, 84)"
   }
