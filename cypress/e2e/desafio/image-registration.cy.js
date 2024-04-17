@@ -1,5 +1,5 @@
-import register from '../support/pages/register'
-import data from '../fixtures/data.json'
+import register from '../../support/pages/register'
+import data from '../../fixtures/data.json'
 
 describe('Image Registration', () => {
   context('Submitting an image with invalid inputs', () => {

@@ -1,2 +1,3 @@
 import './commands'
-import 'allure-cypress/commands'
+import 'cypress-plugin-steps'
+import '@mmisty/cypress-allure-adapter/support';

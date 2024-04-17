@@ -1,5 +1,6 @@
 class Register {
   go() {
+    
     cy.visit('/')
     cy.title().should('contain', 'TDD Frontend Example')
   }
